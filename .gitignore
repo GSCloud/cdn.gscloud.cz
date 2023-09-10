@@ -1,0 +1,9 @@
+!.gitignore
+*.bak
+*.lock
+*.tar
+*.tgz
+*.zip
+*~
+.DS_Store
+.Trash-1000
