@@ -38,10 +38,10 @@ label{color:#000;font-weight:bold}
 .btnmargin{margin:2px;margin-bottom:5px}
 .dragover{border:4px dashed blue!important}
 .extrapadding{padding:5px;border-radius:5px}
-.hover{cursor:pointer}
-.nowrap{white-space:nowrap}
+.hover{cursor:pointer!important}
+.nowrap{white-space:nowrap!important}
 .protect{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:inline-block;width:10em;line-height:12px}
-.mobilebutt{font-size:1em}
+.mobilebutt{font-size:1.5rem}
 
 /* ROTATION & TOUCH */
 #a_rotate_device{display:none}
