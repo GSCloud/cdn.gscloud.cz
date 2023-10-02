@@ -1,5 +1,7 @@
 (function(w, d, undefined) {
     'use strict';
+    window.scrollpx = 0;
+    window.scrolled = 0;
 
     // mark the scroll position to global vars
     window.onscroll = function() {
