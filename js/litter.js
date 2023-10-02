@@ -2,8 +2,8 @@
   'use strict';
   
   // delayed fn
+  console.log('fuck yo!');
   $('#nav > a:nth-child(5)').click(function () {
-    console.log('fuck!');
     $('html').animate({scrollTop: 0}, 'slow').delay(50).queue(function () {
       location.reload();
     });
