@@ -4,14 +4,13 @@
   // delayed fn
   setTimeout(function($) {
     console.log("delayed fn from litter.js");
-
     $('#nav > a:nth-child(5)').click(function () {
       $('html').animate({scrollTop: 0}, 'slow').delay(50).queue(function () {
         location.reload()
       });
     });
   
-  }, 1500);
+  }, 3500);
 
   window.scrollpx = 0;
   window.scrolled = 0;
