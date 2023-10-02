@@ -9,4 +9,9 @@
         window.scrolled = scrolled;
     };
 
+    // flow click to top
+    $('#nav > a:nth-child(5)').click(function() {
+        window.scrollTo(0,0);
+    });
+
 })(window, document);
