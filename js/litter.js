@@ -16,12 +16,15 @@
       window.scrolled = scrolled; // % scrolled
     };
 
-    // flow button click scroll to top
-    $('#nav > a:nth-child(5)').click(function() {
-      $('html').animate({scrollTop: 0}, 'slow').delay(50).queue(function () {
-        location.reload()
+    // delayed fn
+    setTimeout(function() {
+      // flow button click scroll to top
+      $('#nav > a:nth-child(5)').click(function () {
+        $('html').animate({scrollTop: 0}, 'slow').delay(50).queue(function () {
+          location.reload()
+        });
       });
-    });
+    }, 100);
 
   }); // end event handler
 
