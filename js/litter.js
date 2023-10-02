@@ -1,19 +1,19 @@
 (function(w, d, undefined) {
   'use strict';
 
-  window.scrollpx = 0;
-  window.scrolled = 0;
+  w.scrollpx = 0;
+  w.scrolled = 0;
 
-  window.addEventListener("load", function() {
+  w.addEventListener("load", function() {
 
     // mark the scroll position to globals
-    window.onscroll = function() {
-      let scroll = document.body.scrollTop || document.documentElement.scrollTop;
-      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    w.onscroll = function() {
+      let scroll = d.body.scrollTop || d.documentElement.scrollTop;
+      let height = d.documentElement.scrollHeight - d.documentElement.clientHeight;
       let scrolled = (scroll / height) * 100;
 
-      window.scrollpx = scroll; // px scrolled
-      window.scrolled = scrolled; // % scrolled
+      w.scrollpx = scroll; // px scrolled
+      w.scrolled = scrolled; // % scrolled
     };
 
     // flow button click scroll to top
