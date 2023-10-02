@@ -4,10 +4,11 @@
   // delayed fn
   setTimeout(function() {
     console.log("delayed fn from litter.js");
+
     // flow button click scroll to top
     $('#nav > a:nth-child(5)').click(function () {
       $('html').animate({scrollTop: 0}, 'slow').delay(50).queue(function () {
-        location.reload()
+        location.reload();
       });
     });
   }, 500);
