@@ -3,11 +3,11 @@
   
   // delayed fn
   $('#nav > a:nth-child(5)').click(function () {
+    console.log('fuck!');
     $('html').animate({scrollTop: 0}, 'slow').delay(50).queue(function () {
       location.reload();
     });
   });
-
 
   window.scrollpx = 0;
   window.scrolled = 0;
