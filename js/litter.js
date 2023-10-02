@@ -1,19 +1,19 @@
-(function(w, d, undefined) {
+(function() {
   'use strict';
 
-  w.scrollpx = 0;
-  w.scrolled = 0;
+  window.scrollpx = 0;
+  window.scrolled = 0;
 
-  w.addEventListener("load", function() {
+  window.addEventListener("load", function() {
 
     // mark the scroll position to globals
-    w.onscroll = function() {
-      let scroll = d.body.scrollTop || d.documentElement.scrollTop;
-      let height = d.documentElement.scrollHeight - d.documentElement.clientHeight;
+    window.onscroll = function() {
+      let scroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       let scrolled = (scroll / height) * 100;
 
-      w.scrollpx = scroll; // px scrolled
-      w.scrolled = scrolled; // % scrolled
+      window.scrollpx = scroll; // px scrolled
+      window.scrolled = scrolled; // % scrolled
     };
 
     // flow button click scroll to top
@@ -25,4 +25,4 @@
 
   }); // end event handler
 
-})(window, document);
+})();
