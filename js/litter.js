@@ -1,7 +1,7 @@
-(function(window, document, undefined) {
+(function(w, d, undefined) {
     'use strict';
 
     console.log('Litter rulez! 😂😎');
 
-})();
+})(window, document);
 
