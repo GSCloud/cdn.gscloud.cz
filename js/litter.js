@@ -14,7 +14,7 @@
 
     // flow button click scroll to top
     $('#nav > a:nth-child(5)').click(function() {
-        window.scrollTo(0,0);
+        $('html').animate({ scrollTop: 0 }, 'slow');
     });
 
 })(window, document);
