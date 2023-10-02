@@ -11,7 +11,7 @@
       });
     });
   
-  }, 500);
+  }, 1500);
 
   window.scrollpx = 0;
   window.scrolled = 0;
