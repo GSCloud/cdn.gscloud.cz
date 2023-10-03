@@ -1,4 +1,4 @@
-(function() {
+(function(w, d) {
   'use strict';
   
   // LIT object
@@ -64,4 +64,4 @@
   checkNetwork();
 
   console.log('LitterJS is on.');
-})();
+})(window, document);
