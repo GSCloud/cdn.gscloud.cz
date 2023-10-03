@@ -16,16 +16,13 @@
     return hash;
   }
 
-  // click the flow button
-  $('#nav > a:nth-child(5)').click(function () { // not working?
+  // TODO: fix! - click the flow button
+  $('#nav > a:nth-child(5)').click(function () {
     $('html').animate({scrollTop: 0}, 'slow').delay(50).queue(function () {
       location.reload();
     });
   });
   
-  window.ontouchmove = onscroll;
-  window.onscroll = onscroll;
-
   // scroll event
   function onscroll() {
     var scroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -34,7 +31,9 @@
     window.LIT.scrolled = scrolled;
     window.LIT.scrollpx = scroll;
   };
-
+  window.ontouchmove = onscroll;
+  window.onscroll = onscroll;
+  
   // check network status
   function checkNetwork() {
     if ("onLine" in navigator) {
@@ -55,7 +54,36 @@
       }
     }
   }
-  
+
+  // setCookie() general function
+  if (typeof window.setCookie !== "function") window.setCookie = function(key, value, days) {
+    if (key === undefined) return false;
+    if (value === undefined) return false;
+    if (days === undefined) days = 31;
+    if (days == 0) { // session cookie      
+      document.cookie = key + "=" + value + ";path=/";
+    } else {
+      var d1 = new Date().getTime();
+      var d2 = d1 + (parseInt(days) * 86400 * 1000); // time is in miliseconds!
+      document.cookie = key + "=" + value + ";path=/" + ";expires=" + new Date(d2).toGMTString();
+    }
+  }
+
+  // getCookie() general function
+  if (typeof window.getCookie !== "function") window.getCookie = function(key) {
+    if (key === undefined) return false;
+    var v = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return v ? v[2] : null;
+  }
+
+  // delCookie() general function
+  if (typeof window.delCookie !== "function") window.delCookie = function(key) {
+    if (key === undefined) return false;
+    var date = new Date();
+    date.setTime(0);
+    document.cookie = key + "=;path=/" + ";expires=" + date.toGMTString();
+  }
+
   // feature detection and binding: "online"
   if ("onLine" in navigator) {
     window.addEventListener("load", function() {
