@@ -41,19 +41,27 @@
       if (navigator.onLine) {
         document.getElementsByTagName("html")[0].setAttribute("offline", false);
         document.getElementsByTagName("html")[0].setAttribute("online", true);
-        if (w.GSC) {
-          w.LIT.offline = false;
-          w.LIT.online = true;
+        if (window.LIT) {
+          window.LIT.offline = false;
+          window.LIT.online = true;
         }
       } else {
         document.getElementsByTagName("html")[0].setAttribute("offline", true);
         document.getElementsByTagName("html")[0].setAttribute("online", false);
-        if (w.LIT) {
-          w.LIT.offline = true;
-          w.LIT.online = false;
+        if (window.LIT) {
+          window.LIT.offline = true;
+          window.LIT.online = false;
         }
       }
     }
+  }
+  
+  // feature detection and binding: "online"
+  if ("onLine" in navigator) {
+    window.addEventListener("load", function() {
+      window.addEventListener("online", checkNetwork);
+      window.addEventListener("offline", checkNetwork);
+    });
   }
   checkNetwork();
 
