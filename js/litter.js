@@ -55,35 +55,6 @@
     }
   }
 
-  // setCookie() general function
-  if (typeof window.setCookie !== "function") window.setCookie = function(key, value, days) {
-    if (key === undefined) return false;
-    if (value === undefined) return false;
-    if (days === undefined) days = 31;
-    if (days == 0) { // session cookie      
-      document.cookie = key + "=" + value + ";path=/";
-    } else {
-      var d1 = new Date().getTime();
-      var d2 = d1 + (parseInt(days) * 86400 * 1000); // time is in miliseconds!
-      document.cookie = key + "=" + value + ";path=/" + ";expires=" + new Date(d2).toGMTString();
-    }
-  }
-
-  // getCookie() general function
-  if (typeof window.getCookie !== "function") window.getCookie = function(key) {
-    if (key === undefined) return false;
-    var v = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-    return v ? v[2] : null;
-  }
-
-  // delCookie() general function
-  if (typeof window.delCookie !== "function") window.delCookie = function(key) {
-    if (key === undefined) return false;
-    var date = new Date();
-    date.setTime(0);
-    document.cookie = key + "=;path=/" + ";expires=" + date.toGMTString();
-  }
-
   // feature detection and binding: "online"
   if ("onLine" in navigator) {
     window.addEventListener("load", function() {
