@@ -1,10 +1,10 @@
-(function(w, d) {
+(function() {
   'use strict';
   
   // LIT object
-  w.LIT = {};
-  w.LIT.scrolled = 0;
-  w.LIT.scrollpx = 0;
+  window.LIT = {};
+  window.LIT.scrolled = 0;
+  window.LIT.scrollpx = 0;
 
   // compute SHA-256 hash of a string
   async function sha256(message) {
@@ -65,4 +65,4 @@
   checkNetwork();
 
   console.log('LitterJS is on.');
-})(window, document);
+})();
