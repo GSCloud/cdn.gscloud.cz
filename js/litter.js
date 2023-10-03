@@ -28,12 +28,9 @@
 
   // scroll event
   function onscroll() {
-    var scroll = d.body.scrollTop || d.documentElement.scrollTop;
-    var height = d.documentElement.scrollHeight - d.documentElement.clientHeight;
+    var scroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var scrolled = (scroll / height) * 100;
-    if (d.getElementById(pbar)) {
-      d.getElementById(pbar).style.width = scrolled + '%';
-    }
     window.LIT.scrolled = scrolled;
     window.LIT.scrollpx = scroll;
   };
@@ -42,17 +39,15 @@
   function checkNetwork() {
     if ("onLine" in navigator) {
       if (navigator.onLine) {
-        d.getElementsByTagName("html")[0].setAttribute("offline", false);
-        d.getElementsByTagName("html")[0].setAttribute("online", true);
-        if (d.getElementById("offline-message")) d.getElementById("offline-message").setAttribute("aria-hidden", true);
+        document.getElementsByTagName("html")[0].setAttribute("offline", false);
+        document.getElementsByTagName("html")[0].setAttribute("online", true);
         if (w.GSC) {
           w.LIT.offline = false;
           w.LIT.online = true;
         }
       } else {
-        d.getElementsByTagName("html")[0].setAttribute("offline", true);
-        d.getElementsByTagName("html")[0].setAttribute("online", false);
-        if (d.getElementById("offline-message")) d.getElementById("offline-message").setAttribute("aria-hidden", false);
+        document.getElementsByTagName("html")[0].setAttribute("offline", true);
+        document.getElementsByTagName("html")[0].setAttribute("online", false);
         if (w.LIT) {
           w.LIT.offline = true;
           w.LIT.online = false;
@@ -60,7 +55,6 @@
       }
     }
   }
-
   checkNetwork();
 
   console.log('LitterJS is on.');
