@@ -64,5 +64,16 @@
   }
   checkNetwork();
 
+  window.LIT.clearCache = function() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations()
+      .then(function(registrations) {
+         for (let registration of registrations) {
+            registration.unregister();
+         }
+      });
+   }
+  }
+
   console.log('LitterJS is on.');
 })();
