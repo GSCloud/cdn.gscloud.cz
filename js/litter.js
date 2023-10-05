@@ -80,13 +80,13 @@
     $('main').data('fixedUI', true);
 
     // toggle mode button
-    $('body > div > main').prepend('<span onclick="LIT.toggleMode()" style="font-size:2rem;float:right;cursor:pointer">☀️</span>');
+    $('body > div > main').prepend('<span onclick="LIT.toggleMode();" style="font-size:2rem;float:right;cursor:pointer;">🌞</span>');
   }
 
   // onload event listener
   addEventListener('load', (event) => {
     console.log('LIT is on.');
-    setInterval(window.LIT.fixUI, 500);
+    setInterval(window.LIT.fixUI, 250);
   });
 
 })();
