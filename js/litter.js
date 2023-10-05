@@ -79,8 +79,10 @@
   window.LIT.fixColors = function() {
     if ($('body').attr('class') === 'dark') {
       $('textarea,input').css('color', 'white');
+      $('.sun,.arrowtop').css('background-color', '#000');
     } else {
       $('textarea,input').css('color', 'black');
+      $('.sun,.arrowtop').css('background-color', '#fff');
     }
     $('nav.bottom').removeClass('deep-orange5').addClass('deep-orange8');
   }
@@ -109,17 +111,14 @@
     // test UI render 4 refresh
     if ($('main').data('fixedUI')) return false;
     $('main').data('fixedUI', true);
-
-    // fix various colors
-    window.LIT.fixColors();
-
+    
     // toggle dark/light UI mode button
-    $('body > div > main').prepend('<span onclick="LIT.toggleMode();" style="background-color:#000;font-size:1.5rem;cursor:pointer;position:fixed;right:1rem;z-index:999999;padding:0.5rem">🌞</span>');
-   
+    $('body > div > main').prepend('<span class="sun" onclick="LIT.toggleMode();" style="background-color:#000;font-size:1.5rem;cursor:pointer;position:fixed;right:1rem;z-index:999999;padding:0.5rem">🌞</span>');
+    
     // STATS tab
     if ($('#table-stats') && $('#table-stats').length) {
       // scroll to top button
-      $('body > div > main').prepend('<span onclick="LIT.scrollTop();" style="background-color:#000;font-size:2rem;cursor:pointer;position:fixed;bottom:5rem;right:1rem;z-index:999999">🔺</span>');
+      $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2rem;cursor:pointer;position:fixed;bottom:5rem;right:1rem;z-index:999999">🔺</span>');
     }
     
     // USERS tab
@@ -127,20 +126,23 @@
       // fix cursor for usernames
       $('#table-users p.bold').css('cursor', 'pointer');
       // scroll to top button
-      $('body > div > main').prepend('<span onclick="LIT.scrollTop();" style="background-color:#000;font-size:2rem;cursor:pointer;position:fixed;bottom:5rem;right:1rem;z-index:999999">🔺</span>');
+      $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2rem;cursor:pointer;position:fixed;bottom:5rem;right:1rem;z-index:999999">🔺</span>');
     }
     
     // POLLS tab
     if ($('#table-poll') && $('#table-poll').length) {
       // scroll to top button
-      $('body > div > main').prepend('<span onclick="LIT.scrollTop();" style="background-color:#000;font-size:2rem;cursor:pointer;position:fixed;bottom:5rem;right:1rem;z-index:999999">🔺</span>');
+      $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2rem;cursor:pointer;position:fixed;bottom:5rem;right:1rem;z-index:999999">🔺</span>');
     }
     
     // FLOW tab
     if ($('#table-flow') && $('#table-flow').length) {
       // scroll to top button
-      $('body > div > main').prepend('<span onclick="LIT.scrollTop();" style="background-color:#000;font-size:2rem;cursor:pointer;position:fixed;bottom:5rem;right:1rem;z-index:999999">🔺</span>');
+      $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2rem;cursor:pointer;position:fixed;bottom:5rem;right:1rem;z-index:999999">🔺</span>');
     }
+
+    // fix various colors
+    window.LIT.fixColors();
   }
 
   // onload event listener
