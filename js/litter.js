@@ -5,7 +5,6 @@
   window.LIT = {};
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.fixedUI = false;
 
   // compute SHA-256 hash of a string
   async function sha256(message) {
@@ -77,11 +76,11 @@
 
   // fix various UI glitches
   window.LIT.fixUI = function() {
-    if (window.LIT.fixedUI) return false;
+    if ($('main').data('fixedUI')) return false;
+    $('main').data('fixedUI', true);
 
     // toggle mode button
     $('body > div > main').prepend('<span onclick="LIT.toggleMode()" style="font-size:2rem;float:right;cursor:pointer">☀️</span>');
-    window.LIT.fixedUI = true;
   }
 
   // onload event listener
