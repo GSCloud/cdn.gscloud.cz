@@ -152,7 +152,7 @@
 
   // onload event listener
   addEventListener('load', (event) => {
-    console.log('LitterJS v0.1.4 is ON ❤️');
+    console.log('LitterJS v0.1.5 is ON ❤️');
     setInterval(LIT.fixUI, 250);
   });
 
