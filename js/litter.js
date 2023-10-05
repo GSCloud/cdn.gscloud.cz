@@ -80,7 +80,7 @@
     $('main').data('fixedUI', true);
 
     // toggle mode button
-    $('body > div > main').prepend('<span onclick="LIT.toggleMode();" style="font-size:2rem;float:right;cursor:pointer;">🌞</span>');
+    $('body > div > main').prepend('<span onclick="LIT.toggleMode();" style="font-size:2rem;cursor:pointer;position:fixed;right:1rem;">🌞</span>');
   }
 
   // onload event listener
