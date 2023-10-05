@@ -72,6 +72,11 @@
   // toggle dark/light UI mode
   window.LIT.toggleMode = function() {
     $('body').toggleClass('dark');
+    if ($('body').attr('class') === 'dark') {
+      $('textarea,input').css('color', 'white');
+    } else {
+      $('textarea,input').css('color', 'black');
+    }
   }
 
   // scroll to top
@@ -87,10 +92,7 @@
 
     // toggle dark/light UI mode button
     $('body > div > main').prepend('<span onclick="LIT.toggleMode();" style="font-size:1.5rem;cursor:pointer;position:fixed;right:1rem;z-index:999999;padding:0.5rem">🌞</span>');
-
-    // fix colors
-    $('textarea,input').css('color', 'white');
-    
+   
     // STATS tab
     if ($('#table-stats') && $('#table-stats').length) {
       // scroll to top button
