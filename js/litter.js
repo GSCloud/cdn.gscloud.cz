@@ -121,7 +121,7 @@
     $('body > div > main').prepend('<span class="sun" onclick="LIT.toggleMode();" style="background-color:#000;font-size:1.5rem;cursor:pointer;position:fixed;right:1rem;z-index:999999;padding:0.5rem">🌞</span>');
     
     // STATS tab
-    if ($('#table-stats') && $('#table-stats').length) {
+    if ($('#table-stats-flow') && $('#table-stats-flow').length) {
       // scroll to top button
       $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2rem;cursor:pointer;position:fixed;bottom:5rem;right:1rem;z-index:999999">🔺</span>');
     }
