@@ -76,13 +76,14 @@
 
   // fix various UI glitches
   window.LIT.fixUI = function() {
-    console.log('Fixing UI!');
+    // toggle mode button
+    $('body > div > main').prepend('<span onclick="LIT.toggleMode()" style="font-size:2rem;float:right;cursor:pointer">☀️</span>');
   }
 
   // onload event listener
   addEventListener('load', (event) => {
-    window.LIT.fixUI();
     console.log('LIT is on.');
+    window.LIT.fixUI();
   });
 
 })();
