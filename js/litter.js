@@ -94,11 +94,11 @@
   window.LIT.imageZoom = function() {
     $('#table-flow img:not(.ff)').on('click', function() {
       if ($(this).css('max-height') !== '100%') {
-        $(this).css('max-height', '100%');
+        $(this).css('max-height', '100%').css('z-index', '0');
       } else {
-        $(this).css('max-height', '75vh');
+        $(this).css('max-height', '75vh').css('z-index', '999999');
       }
-    }).addClass('ff').css('z-index', '999999').css('cursor', 'pointer');
+    }).addClass('ff').css('cursor', 'pointer');
   }
 
   // fix various UI glitches
