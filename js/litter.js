@@ -94,7 +94,7 @@
   window.LIT.imageZoom = function() {
     $('#table-flow img:not(.ff)').on('click', function() {
       if ($(this).css('max-height') !== '100%') {
-        $(this).css('max-height', '100%').css('z-index', '0');
+        $('#table-flow img.ff').css('max-height', '100%').css('z-index', '0');
       } else {
         $(this).css('max-height', '75vh').css('z-index', '999999');
       }
