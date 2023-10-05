@@ -99,7 +99,7 @@
         $('#table-flow img.ff').css('max-height', '100%').css('z-index', '0');
       } else {
         $('#table-flow img.ff').css('max-height', '100%').css('z-index', '0');
-        $(this).css('max-height', '75vh').css('z-index', '999');
+        $(this).css('max-height', '75vh').css('transition', 'max-height 0.1s').css('z-index', '999');
       }
     }).addClass('ff').css('cursor', 'pointer');
     $('nav').css('z-index', '99999');
