@@ -80,7 +80,7 @@
     $('main').data('fixedUI', true);
 
     // toggle dark/light UI mode button
-    $('body > div > main').prepend('<span onclick="LIT.toggleMode();" style="font-size:2rem;cursor:pointer;position:fixed;right:1rem;">🌞</span>');
+    $('body > div > main').prepend('<span onclick="LIT.toggleMode();" style="font-size:2rem;cursor:pointer;position:fixed;right:1rem;z-index:999999">🌞</span>');
   }
 
   // onload event listener
