@@ -118,7 +118,9 @@
     $('table').css('padding-bottom', '2rem');
     
     // toggle dark/light UI mode button
-    $('body > div > main').prepend('<span class="sun" onclick="LIT.toggleMode();" style="background-color:#000;font-size:1.5rem;cursor:pointer;position:fixed;right:1px;z-index:999999;padding:0.5rem">🌞</span>');
+    if ($('main h5').html() === 'littr settings') {
+      $('body > div > main').prepend('<span class="sun" onclick="LIT.toggleMode();" style="background-color:#000;font-size:1.5rem;cursor:pointer;position:fixed;right:1px;z-index:999999;padding:0.5rem">🌞</span>');
+    }
     
     // STATS tab
     if ($('#table-stats-flow') && $('#table-stats-flow').length) {
