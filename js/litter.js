@@ -144,11 +144,6 @@
 
     // fix various colors
     window.LIT.fixColors();
-
-    // unzoom images on body click
-    $('body').click(function() {
-      $('#table-flow img.ff').css('max-height', '100%').css('z-index', '0');
-    });
   }
 
   // onload event listener
