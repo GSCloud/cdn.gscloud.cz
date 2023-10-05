@@ -16,7 +16,7 @@
     return hash;
   }
  
-  // scroll event
+  // scroll event listener
   function onscroll() {
     var scroll = document.body.scrollTop || document.documentElement.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -69,7 +69,7 @@
    }
   }
 
-  // switch dark/light mode
+  // toggle dark/light UI mode
   window.LIT.toggleMode = function() {
     $('body').toggleClass('dark');
   }
@@ -79,7 +79,7 @@
     if ($('main').data('fixedUI')) return false;
     $('main').data('fixedUI', true);
 
-    // toggle mode button
+    // toggle dark/light UI mode button
     $('body > div > main').prepend('<span onclick="LIT.toggleMode();" style="font-size:2rem;cursor:pointer;position:fixed;right:1rem;">🌞</span>');
   }
 
