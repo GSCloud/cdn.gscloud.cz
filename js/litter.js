@@ -83,7 +83,7 @@
   // onload event listener
   addEventListener('load', (event) => {
     console.log('LIT is on.');
-    window.LIT.fixUI();
+    setTimeout(window.LIT.fixUI, 1000);
   });
 
 })();
