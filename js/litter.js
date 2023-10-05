@@ -92,7 +92,7 @@
     $('html,body').animate({scrollTop: 0}, 'fast');
   }
 
-  // image zoom
+  // dynamic image zoom
   window.LIT.imageZoom = function() {
     $('#table-flow img:not(.ff)').on('click', function() {
       if ($(this).css('max-height') !== '100%') {
@@ -105,9 +105,9 @@
     $('nav').css('z-index', '99999');
   }
 
-  // fix various UI glitches
+  // fix UI
   window.LIT.fixUI = function() {
-    // fix figs
+    // dynamic image zooming
     LIT.imageZoom();
 
     // test UI render 4 refresh
