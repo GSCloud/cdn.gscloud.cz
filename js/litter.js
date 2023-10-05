@@ -113,6 +113,9 @@
     // test UI render 4 refresh
     if ($('main').data('fixedUI')) return false;
     $('main').data('fixedUI', true);
+
+    // fix tables bottom padding
+    $('table').css('padding-bottom', '2rem');
     
     // toggle dark/light UI mode button
     $('body > div > main').prepend('<span class="sun" onclick="LIT.toggleMode();" style="background-color:#000;font-size:1.5rem;cursor:pointer;position:fixed;right:1rem;z-index:999999;padding:0.5rem">🌞</span>');
