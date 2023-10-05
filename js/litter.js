@@ -92,7 +92,7 @@
     $('body > div > main').prepend('<span onclick="LIT.toggleMode();" style="font-size:1.5rem;cursor:pointer;position:fixed;right:1rem;z-index:999999;padding:0.5rem">🌞</span>');
 
     // FLOW tab: scroll to top button
-    if ($('#table-flow')) {
+    if ($('#table-flow') && $('#table-flow').length) {
       $('body > div > main').prepend('<span onclick="LIT.scrollTop();" style="font-size:2rem;cursor:pointer;position:fixed;bottom:5rem;right:1rem;z-index:999999">🔺</span>');
     }
   }
