@@ -81,11 +81,12 @@
 
   // fix various UI glitches
   window.LIT.fixUI = function() {
+    // test UI render refresh
     if ($('main').data('fixedUI')) return false;
     $('main').data('fixedUI', true);
 
     // toggle dark/light UI mode button
-    $('body > div > main').prepend('<span onclick="LIT.toggleMode();" style="font-size:1.5rem;cursor:pointer;position:fixed;right:1rem;z-index:999999">🌞</span>');
+    $('body > div > main').prepend('<span onclick="LIT.toggleMode();" style="font-size:1.5rem;cursor:pointer;position:fixed;right:1rem;z-index:999999;padding:0.5rem">🌞</span>');
 
     // scroll to top button
     $('body > div > main').prepend('<span onclick="LIT.scrollTop();" style="font-size:2rem;cursor:pointer;position:fixed;bottom:5rem;right:1rem;z-index:999999">🔺</span>');
