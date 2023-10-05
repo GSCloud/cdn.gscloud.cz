@@ -96,9 +96,9 @@
       if ($(this).css('max-height') !== '100%') {
         $(this).css('max-height', '100%');
       } else {
-        $(this).css('max-height', '75vh').css('z-index', '999999').css('cursor', 'pointer');
+        $(this).css('max-height', '75vh');
       }
-    }).addClass('ff');
+    }).addClass('ff').css('z-index', '999999').css('cursor', 'pointer');
   }
 
   // fix various UI glitches
