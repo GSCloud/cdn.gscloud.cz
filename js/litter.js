@@ -90,8 +90,21 @@
     $('html,body').animate({scrollTop: 0}, 'fast');
   }
 
+  // image zoom
+  window.LIT.imageZoom = function() {
+    $('#table-flow img:not(.ff)').on('click', function() {
+      if ($(this).css('max-height') !== '100%') {
+        $(this).css('max-height', '100%');
+      } else {
+        $(this).css('max-height', '75vh').css('z-index', '999999').css('cursor', 'pointer');
+      }
+    }).addClass('ff');
+  }
+
   // fix various UI glitches
   window.LIT.fixUI = function() {
+    // fix figs
+    window.LIT.imageZoom();
     // test UI render 4 refresh
     if ($('main').data('fixedUI')) return false;
     $('main').data('fixedUI', true);
