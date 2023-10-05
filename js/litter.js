@@ -76,14 +76,12 @@
 
   // fix various UI glitches
   window.LIT.fixUI = function() {
-    $('#nav > a:nth-child(5)').click(function () {
-      $('html').animate({scrollTop: 0}, 'fast').delay(50).queue(function () {
-      });
-    });
+    console.log('Fixing UI!');
   }
 
   // onload event listener
   addEventListener('load', (event) => {
+    window.LIT.fixUI();
     console.log('LIT is on.');
   });
 
