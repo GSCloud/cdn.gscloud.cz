@@ -3,6 +3,7 @@
   
   // LIT object
   window.LIT = {};
+  window.LIT.version = 'LitterJS v0.1.7 ❤️';
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
 
@@ -99,7 +100,7 @@
         $('#table-flow img.ff').css('max-height', '100%').css('z-index', '0');
       } else {
         $('#table-flow img.ff').css('max-height', '100%').css('z-index', '0');
-        $(this).css('max-height', '75vh').css('transition', 'max-height 0.1s').css('z-index', '999');
+        $(this).css('max-height', '90vh').css('transition', 'max-height 0.1s').css('z-index', '999');
       }
     }).addClass('ff').css('cursor', 'pointer');
     $('nav').css('z-index', '99999');
@@ -120,6 +121,7 @@
     // toggle dark/light UI mode button
     if ($('main h5').html() === 'littr settings') {
       $('body > div > main').prepend('<span class="sun" onclick="LIT.toggleMode();" style="background-color:#000;font-size:1.5rem;cursor:pointer;position:fixed;right:1px;z-index:999999;padding:0.5rem">🌞</span>');
+      $('body > div > main').prepend(LIT.version);
     }
     
     // STATS tab
@@ -154,7 +156,7 @@
 
   // onload event listener
   addEventListener('load', (event) => {
-    console.log('LitterJS v0.1.6 ❤️');
+    console.log(LIT.version);
     setInterval(LIT.fixUI, 250);
   });
 
