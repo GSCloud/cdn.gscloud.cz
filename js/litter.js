@@ -48,7 +48,7 @@
     }
   }
 
-  // feature detection: 'online'
+  // feature detection: 'online/offline'
   if ('onLine' in navigator) {
     window.addEventListener('load', function() {
       window.addEventListener('online', checkNetwork);
@@ -108,7 +108,8 @@
   // fix various UI glitches
   window.LIT.fixUI = function() {
     // fix figs
-    window.LIT.imageZoom();
+    LIT.imageZoom();
+
     // test UI render 4 refresh
     if ($('main').data('fixedUI')) return false;
     $('main').data('fixedUI', true);
@@ -143,13 +144,13 @@
     }
 
     // fix various colors
-    window.LIT.fixColors();
+    LIT.fixColors();
   }
 
   // onload event listener
   addEventListener('load', (event) => {
-    console.log('LitterJS v0.1.3 is ON ❤️');
-    setInterval(window.LIT.fixUI, 250);
+    console.log('LitterJS v0.1.4 is ON ❤️');
+    setInterval(LIT.fixUI, 250);
   });
 
 })();
