@@ -15,14 +15,7 @@
     const hash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
     return hash;
   }
-
-  // TODO: fix! - click the flow button
-  $('#nav > a:nth-child(5)').click(function () {
-    $('html').animate({scrollTop: 0}, 'slow').delay(50).queue(function () {
-      location.reload();
-    });
-  });
-  
+ 
   // scroll event
   function onscroll() {
     var scroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -36,17 +29,17 @@
   
   // check network status
   function checkNetwork() {
-    if ("onLine" in navigator) {
+    if ('onLine' in navigator) {
       if (navigator.onLine) {
-        document.getElementsByTagName("html")[0].setAttribute("offline", false);
-        document.getElementsByTagName("html")[0].setAttribute("online", true);
+        document.getElementsByTagName('html')[0].setAttribute('offline', false);
+        document.getElementsByTagName('html')[0].setAttribute('online', true);
         if (window.LIT) {
           window.LIT.offline = false;
           window.LIT.online = true;
         }
       } else {
-        document.getElementsByTagName("html")[0].setAttribute("offline", true);
-        document.getElementsByTagName("html")[0].setAttribute("online", false);
+        document.getElementsByTagName('html')[0].setAttribute('offline', true);
+        document.getElementsByTagName('html')[0].setAttribute('online', false);
         if (window.LIT) {
           window.LIT.offline = true;
           window.LIT.online = false;
@@ -55,15 +48,16 @@
     }
   }
 
-  // feature detection and binding: "online"
-  if ("onLine" in navigator) {
-    window.addEventListener("load", function() {
-      window.addEventListener("online", checkNetwork);
-      window.addEventListener("offline", checkNetwork);
+  // feature detection: 'online'
+  if ('onLine' in navigator) {
+    window.addEventListener('load', function() {
+      window.addEventListener('online', checkNetwork);
+      window.addEventListener('offline', checkNetwork);
     });
   }
   checkNetwork();
 
+  // deregister the service worker
   window.LIT.clearCache = function() {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations()
@@ -75,5 +69,22 @@
    }
   }
 
-  console.log('LitterJS is on.');
+  // switch dark/light mode
+  window.LIT.toggleMode = function() {
+    $('body').toggleClass('dark');
+  }
+
+  // fix various UI glitches
+  window.LIT.fixUI = function() {
+    $('#nav > a:nth-child(5)').click(function () {
+      $('html').animate({scrollTop: 0}, 'fast').delay(50).queue(function () {
+      });
+    });
+  }
+
+  // onload event listener
+  addEventListener('load', (event) => {
+    console.log('LIT is on.');
+  });
+
 })();
