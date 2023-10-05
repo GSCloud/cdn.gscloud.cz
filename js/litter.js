@@ -72,7 +72,7 @@
   // toggle dark/light UI mode
   window.LIT.toggleMode = function() {
     $('body').toggleClass('dark');
-    LIT.fixColors();
+    window.LIT.fixColors();
   }
 
   // fix various colors
@@ -82,6 +82,7 @@
     } else {
       $('textarea,input').css('color', 'black');
     }
+    $('nav.bottom').removeClass('deep-orange5').addClass('deep-orange8');
   }
 
   // scroll to top
