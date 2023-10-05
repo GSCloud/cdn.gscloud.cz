@@ -72,6 +72,11 @@
   // toggle dark/light UI mode
   window.LIT.toggleMode = function() {
     $('body').toggleClass('dark');
+    LIT.fixColors();
+  }
+
+  // fix various colors
+  window.LIT.fixColors = function() {
     if ($('body').attr('class') === 'dark') {
       $('textarea,input').css('color', 'white');
     } else {
@@ -89,6 +94,9 @@
     // test UI render 4 refresh
     if ($('main').data('fixedUI')) return false;
     $('main').data('fixedUI', true);
+
+    // fix various colors
+    window.LIT.fixColors();
 
     // toggle dark/light UI mode button
     $('body > div > main').prepend('<span onclick="LIT.toggleMode();" style="font-size:1.5rem;cursor:pointer;position:fixed;right:1rem;z-index:999999;padding:0.5rem">🌞</span>');
