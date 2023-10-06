@@ -44,6 +44,7 @@
       if (navigator.onLine) {
         document.getElementsByTagName('html')[0].setAttribute('offline', false);
         document.getElementsByTagName('html')[0].setAttribute('online', true);
+        $('#offline').remove();
         if (window.LIT) {
           window.LIT.offline = false;
           window.LIT.online = true;
@@ -51,6 +52,7 @@
       } else {
         document.getElementsByTagName('html')[0].setAttribute('offline', true);
         document.getElementsByTagName('html')[0].setAttribute('online', false);
+        $('body > div > main').prepend('<span id=offline style="font-size:2.5rem;position:fixed;left:1px;bottom:5rem;z-index:999999">📵</span>');
         if (window.LIT) {
           window.LIT.offline = true;
           window.LIT.online = false;
@@ -117,8 +119,12 @@
     $('#table-users p.bold').css('cursor', 'pointer');
 
     // test UI render 4 refresh
-    if ($('main').data('fixedUI')) return false;
+    if ($('main').data('fixedUI')) {
+      return false;
+    }
     $('main').data('fixedUI', true);
+    $('body > div > main').prepend('<span class="offline" style="visibility:hidden;background-color:#000;font-size:2.5rem;position:fixed;left:1px;bottom:5rem;z-index:999999">📵</span>').css('[offline="true"] #offline-message{visibility:visible}');
+
 
     // fix tables bottom padding
     $('table').css('padding-bottom', '2rem');
@@ -131,9 +137,6 @@
     
     // STATS tab
     if ($('#table-stats-flow') && $('#table-stats-flow').length) {
-      // scroll to top button
-      //$('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
-
       // bottom button click event = scroll to top
       $('#nav-bottom > a:nth-child(1)').click(function() {
         LIT.scrollTop();
@@ -143,9 +146,6 @@
     
     // USERS tab
     if ($('#table-users') && $('#table-users').length) {
-      // scroll to top button
-      //$('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
-
       // bottom button click event = scroll to top
       $('#nav-bottom > a:nth-child(2)').click(function() {
         LIT.scrollTop();
@@ -154,9 +154,6 @@
     
     // POLLS tab
     if ($('#table-poll') && $('#table-poll').length) {
-      // scroll to top button
-      //$('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
-
       // bottom button click event = scroll to top
       $('#nav-bottom > a:nth-child(4)').click(function() {
         LIT.scrollTop();
@@ -165,9 +162,6 @@
     
     // FLOW tab
     if ($('#table-flow') && $('#table-flow').length) {
-      // scroll to top button
-      //$('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
-
       // bottom button click event = page reload
       $('#nav-bottom > a:nth-child(5)').click(function() {
         location.reload();
