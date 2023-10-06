@@ -7,7 +7,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.2.3 ❤️';
+  window.LIT.version = 'LitterJS v0.2.4 ❤️';
 
   // compute SHA-256 hash of a string
   async function sha256(message) {
@@ -125,7 +125,6 @@
     }
     $('main').data('fixedUI', true);
     $('body > div > main').prepend('<span class="offline" style="visibility:hidden;background-color:#000;font-size:2.5rem;position:fixed;left:1px;bottom:5rem;z-index:999999">📵</span>').css('[offline="true"] #offline-message{visibility:visible}');
-
 
     // fix tables bottom padding
     $('table').css('padding-bottom', '2rem');
