@@ -52,6 +52,7 @@
       } else {
         document.getElementsByTagName('html')[0].setAttribute('offline', true);
         document.getElementsByTagName('html')[0].setAttribute('online', false);
+        $('#offline').remove();
         $('body > div > main').prepend('<span id=offline style="font-size:2.5rem;position:fixed;left:1px;bottom:5rem;z-index:999999">📵</span>');
         if (window.LIT) {
           window.LIT.offline = true;
