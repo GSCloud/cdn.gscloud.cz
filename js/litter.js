@@ -7,7 +7,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.2.2 ❤️';
+  window.LIT.version = 'LitterJS v0.2.3 ❤️';
 
   // compute SHA-256 hash of a string
   async function sha256(message) {
