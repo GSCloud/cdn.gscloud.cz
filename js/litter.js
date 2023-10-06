@@ -3,9 +3,11 @@
   
   // LIT object
   window.LIT = {};
-  window.LIT.version = 'LitterJS v0.1.7 ❤️';
+  window.LIT.offline = null;
+  window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
+  window.LIT.version = 'LitterJS v0.2.0 ❤️';
 
   // compute SHA-256 hash of a string
   async function sha256(message) {
@@ -28,6 +30,14 @@
   window.ontouchmove = onscroll;
   window.onscroll = onscroll;
   
+  // feature detection: 'online/offline'
+  if ('onLine' in navigator) {
+    window.addEventListener('load', function() {
+      window.addEventListener('online', checkNetwork);
+      window.addEventListener('offline', checkNetwork);
+    });
+  }
+
   // check network status
   function checkNetwork() {
     if ('onLine' in navigator) {
@@ -47,14 +57,6 @@
         }
       }
     }
-  }
-
-  // feature detection: 'online/offline'
-  if ('onLine' in navigator) {
-    window.addEventListener('load', function() {
-      window.addEventListener('online', checkNetwork);
-      window.addEventListener('offline', checkNetwork);
-    });
   }
   checkNetwork();
 
