@@ -183,6 +183,9 @@
       $('body').addClass('dark');
     }
 
+    // sortable CSS
+    $('head').append('<link rel="stylesheet" href="https://cdn.gscloud.cz/css/sortable.min.css" type="text/css"/>');
+
     setInterval(LIT.fixUI, 250);
   });
 
