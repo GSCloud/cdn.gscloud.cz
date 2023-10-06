@@ -70,7 +70,7 @@
     if ($('body').attr('class') === 'dark') {
       delete localStorage['lightmode'];
     } else {
-      localStorage['lightmode'] = true;
+      localStorage['lightmode'] = 1;
     }
     window.LIT.fixColors();
   }
@@ -176,7 +176,7 @@
     console.log(LIT.version);
 
     // set UI mode by localStorage
-    if (localStorage['lightmode'] === true) {
+    if (localStorage['lightmode']) {
       $('body').removeClass('dark');
     } else {
       $('body').addClass('dark');
