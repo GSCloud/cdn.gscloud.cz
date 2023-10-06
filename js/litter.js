@@ -194,7 +194,7 @@
 
 })();
 
-// Umami analytics
+// Umami analytics - https://umami.is
 (function() {
   var el = document.createElement('script');
   el.setAttribute('src', 'https://umami.gscloud.cz/script.js');
@@ -202,7 +202,7 @@
   document.body.appendChild(el);
 })();
 
-// Sortable tables
+// Sortable tables - https://www.cssscript.com/fast-html-table-sorting/
 (function() {
   var el = document.createElement('script');
   el.setAttribute('src', 'https://cdn.gscloud.cz/js/sortable.min.js');
