@@ -120,7 +120,7 @@
     $('#table-users p.bold').css('cursor', 'pointer');
 
     // make tables sortable
-    $('table').addClass('sortable')
+    $('#table-stats-flow,#table-users').addClass('sortable');
 
     // test UI render 4 refresh
     if ($('main').data('fixedUI')) {
