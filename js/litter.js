@@ -7,7 +7,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.2.6 ❤️';
+  window.LIT.version = 'LitterJS v0.2.7 ❤️';
 
   // scroll event listener
   function onscroll() {
@@ -72,14 +72,14 @@
 
   // fix colors
   window.LIT.fixColors = function() {
-    if ($('body').attr('class') === 'dark') {
+    if ($('body').attr('class') == 'dark') {
       $('.sun').css('background-color', '#000');
       $('textarea,input').css('color', '#fff');
-      $('dialog>table').css('color', '#fff')
+      $('dialog > table').css('color', '#fff')
     } else {
       $('.sun').css('background-color', '#fff');
       $('textarea,input').css('color', '#000');
-      $('dialog>table').css('color', '#000')
+      $('dialog > table').css('color', '#fff')
     }
     $('nav.bottom').removeClass('deep-orange5').addClass('deep-orange8');
   }
