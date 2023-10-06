@@ -67,9 +67,10 @@
   // toggle dark/light UI mode
   window.LIT.toggleMode = function() {
     $('body').toggleClass('dark');
-    delete localStorage['darkmode'];
     if ($('body').attr('class') === 'dark') {
-      localStorage['darkmode'] = true;
+      delete localStorage['lightmode'];
+    } else {
+      localStorage['lightmode'] = true;
     }
     window.LIT.fixColors();
   }
@@ -174,10 +175,11 @@
   addEventListener('load', (event) => {
     console.log(LIT.version);
 
-    // switch on dark mode if local storage is set
-    if (localStorage['darkmode'] === true) {
+    // set UI mode by localStorage
+    if (localStorage['lightmode'] === true) {
       $('body').removeClass('dark');
-      LIT.toggleMode();
+    } else {
+      $('body').addClass('dark');
     }
 
     setInterval(LIT.fixUI, 250);
