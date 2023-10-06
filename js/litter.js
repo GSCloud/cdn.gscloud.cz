@@ -78,7 +78,7 @@
       $('dialog > table').css('color', '#fff')
     } else {
       $('.sun').css('background-color', '#fff');
-      $('textarea,input').css('color', '#000');
+      $('textarea,input').css('color', '#fff');
       $('dialog > table').css('color', '#fff')
     }
     $('nav.bottom').removeClass('deep-orange5').addClass('deep-orange8');
