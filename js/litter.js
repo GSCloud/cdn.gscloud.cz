@@ -151,6 +151,9 @@
     if ($('#table-flow') && $('#table-flow').length) {
       // scroll to top button
       $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
+      $('#nav-bottom > a:nth-child(5)').click(function() {
+        location.reload();
+      });
     }
 
     // fix various colors
