@@ -7,7 +7,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.2.1 ❤️';
+  window.LIT.version = 'LitterJS v0.2.2 ❤️';
 
   // compute SHA-256 hash of a string
   async function sha256(message) {
@@ -132,7 +132,7 @@
     // STATS tab
     if ($('#table-stats-flow') && $('#table-stats-flow').length) {
       // scroll to top button
-      $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
+      //$('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
 
       // bottom button click event = scroll to top
       $('#nav-bottom > a:nth-child(1)').click(function() {
@@ -144,7 +144,7 @@
     // USERS tab
     if ($('#table-users') && $('#table-users').length) {
       // scroll to top button
-      $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
+      //$('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
 
       // bottom button click event = scroll to top
       $('#nav-bottom > a:nth-child(2)').click(function() {
@@ -155,7 +155,7 @@
     // POLLS tab
     if ($('#table-poll') && $('#table-poll').length) {
       // scroll to top button
-      $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
+      //$('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
 
       // bottom button click event = scroll to top
       $('#nav-bottom > a:nth-child(4)').click(function() {
@@ -166,7 +166,7 @@
     // FLOW tab
     if ($('#table-flow') && $('#table-flow').length) {
       // scroll to top button
-      $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
+      //$('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
 
       // bottom button click event = page reload
       $('#nav-bottom > a:nth-child(5)').click(function() {
