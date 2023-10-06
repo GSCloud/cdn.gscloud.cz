@@ -8,7 +8,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.2.8 ❤️';
+  window.LIT.version = 'LitterJS v0.2.9 ❤️';
 
   // scroll event listener
   function onscroll() {
@@ -187,7 +187,7 @@
     }
 
     // sortable CSS
-    $('head').append('<link rel="stylesheet" href="https://cdn.gscloud.cz/css/sortable.min.css" type="text/css"/>');
+    //$('head').append('<link rel="stylesheet" href="https://cdn.gscloud.cz/css/sortable.min.css" type="text/css"/>');
 
     setInterval(LIT.fixUI, 250);
   });
