@@ -7,7 +7,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.2.7 ❤️';
+  window.LIT.version = 'LitterJS v0.2.8 ❤️';
 
   // scroll event listener
   function onscroll() {
@@ -176,7 +176,7 @@
     console.log(LIT.version);
 
     // set UI mode by localStorage
-    if (localStorage['lightmode']) {
+    if (localStorage && localStorage['lightmode']) {
       $('body').removeClass('dark');
     } else {
       $('body').addClass('dark');
