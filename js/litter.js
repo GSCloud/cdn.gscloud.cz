@@ -79,11 +79,11 @@
   window.LIT.fixColors = function() {
     if ($('body').attr('class') === 'dark') {
       $('.sun').css('background-color', '#000');
-      $('textarea,input').css('color', '#fff');
+      $('textarea,input').css('color', '#888');
       $('dialog > table').css('color', '#fff')
     } else {
       $('.sun').css('background-color', '#fff');
-      $('textarea,input').css('color', '#fff');
+      $('textarea,input').css('color', '#888');
       $('dialog > table').css('color', '#fff')
     }
     $('nav.bottom').removeClass('deep-orange5').addClass('deep-orange8');
