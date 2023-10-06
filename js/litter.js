@@ -7,7 +7,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.2.5 ❤️';
+  window.LIT.version = 'LitterJS v0.2.6 ❤️';
 
   // scroll event listener
   function onscroll() {
@@ -31,10 +31,10 @@
   // check network status
   function checkNetwork() {
     if ('onLine' in navigator) {
+      $('#offline').remove();
       if (navigator.onLine) {
         document.getElementsByTagName('html')[0].setAttribute('offline', false);
         document.getElementsByTagName('html')[0].setAttribute('online', true);
-        $('#offline').remove();
         if (window.LIT) {
           window.LIT.offline = false;
           window.LIT.online = true;
@@ -42,7 +42,6 @@
       } else {
         document.getElementsByTagName('html')[0].setAttribute('offline', true);
         document.getElementsByTagName('html')[0].setAttribute('online', false);
-        $('#offline').remove();
         $('body > div > main').prepend('<span id=offline style="font-size:2.5rem;position:fixed;left:1px;bottom:5rem;z-index:999999">📵</span>');
         if (window.LIT) {
           window.LIT.offline = true;
@@ -71,14 +70,16 @@
     window.LIT.fixColors();
   }
 
-  // fix various colors
+  // fix colors
   window.LIT.fixColors = function() {
     if ($('body').attr('class') === 'dark') {
-      $('textarea,input').css('color', 'white');
-      $('.sun,.arrowtop').css('background-color', '#000');
+      $('.sun').css('background-color', '#000');
+      $('textarea,input').css('color', '#fff');
+      $('dialog>table').css('color', '#fff')
     } else {
-      $('textarea,input').css('color', 'black');
-      $('.sun,.arrowtop').css('background-color', '#fff');
+      $('.sun').css('background-color', '#fff');
+      $('textarea,input').css('color', '#000');
+      $('dialog>table').css('color', '#000')
     }
     $('nav.bottom').removeClass('deep-orange5').addClass('deep-orange8');
   }
@@ -103,8 +104,11 @@
 
   // fix UI
   window.LIT.fixUI = function() {
-    // dynamic image zooming
+    // image zoom
     LIT.imageZoom();
+
+    // fix colors
+    LIT.fixColors();
 
     // fix cursor for usernames
     $('#table-users p.bold').css('cursor', 'pointer');
@@ -158,7 +162,7 @@
       });
     }
 
-    // fix various colors
+    // fix colors
     LIT.fixColors();
   }
 
