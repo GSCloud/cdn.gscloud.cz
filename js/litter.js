@@ -7,18 +7,8 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.2.4 ❤️';
+  window.LIT.version = 'LitterJS v0.2.5 ❤️';
 
-  // compute SHA-256 hash of a string
-  async function sha256(message) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(message);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-    return hash;
-  }
- 
   // scroll event listener
   function onscroll() {
     var scroll = document.body.scrollTop || document.documentElement.scrollTop;
