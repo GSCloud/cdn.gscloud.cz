@@ -67,12 +67,16 @@
   // toggle dark/light UI mode
   window.LIT.toggleMode = function() {
     $('body').toggleClass('dark');
+    delete localStorage['darkmode'];
+    if ($('body').attr('class') === 'dark') {
+      localStorage['darkmode'] = true;
+    }
     window.LIT.fixColors();
   }
 
   // fix colors
   window.LIT.fixColors = function() {
-    if ($('body').attr('class') == 'dark') {
+    if ($('body').attr('class') === 'dark') {
       $('.sun').css('background-color', '#000');
       $('textarea,input').css('color', '#fff');
       $('dialog > table').css('color', '#fff')
@@ -169,6 +173,13 @@
   // onload event listener
   addEventListener('load', (event) => {
     console.log(LIT.version);
+
+    // switch on dark mode if local storage is set
+    if (localStorage['darkmode'] === true) {
+      $('body').removeClass('dark');
+      LIT.toggleMode();
+    }
+
     setInterval(LIT.fixUI, 250);
   });
 
