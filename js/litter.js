@@ -7,7 +7,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.2.0 ❤️';
+  window.LIT.version = 'LitterJS v0.2.1 ❤️';
 
   // compute SHA-256 hash of a string
   async function sha256(message) {
@@ -151,6 +151,8 @@
     if ($('#table-flow') && $('#table-flow').length) {
       // scroll to top button
       $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
+
+      // flow button click event = page reload
       $('#nav-bottom > a:nth-child(5)').click(function() {
         location.reload();
       });
