@@ -133,18 +133,34 @@
     if ($('#table-stats-flow') && $('#table-stats-flow').length) {
       // scroll to top button
       $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
+
+      // bottom button click event = scroll to top
+      $('#nav-bottom > a:nth-child(1)').click(function() {
+        LIT.scrollTop();
+      });
+      
     }
     
     // USERS tab
     if ($('#table-users') && $('#table-users').length) {
       // scroll to top button
       $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
+
+      // bottom button click event = scroll to top
+      $('#nav-bottom > a:nth-child(2)').click(function() {
+        LIT.scrollTop();
+      });
     }
     
     // POLLS tab
     if ($('#table-poll') && $('#table-poll').length) {
       // scroll to top button
       $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
+
+      // bottom button click event = scroll to top
+      $('#nav-bottom > a:nth-child(4)').click(function() {
+        LIT.scrollTop();
+      });
     }
     
     // FLOW tab
@@ -152,7 +168,7 @@
       // scroll to top button
       $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
 
-      // flow button click event = page reload
+      // bottom button click event = page reload
       $('#nav-bottom > a:nth-child(5)').click(function() {
         location.reload();
       });
