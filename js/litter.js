@@ -113,6 +113,9 @@
     // dynamic image zooming
     LIT.imageZoom();
 
+    // fix cursor for usernames
+    $('#table-users p.bold').css('cursor', 'pointer');
+
     // test UI render 4 refresh
     if ($('main').data('fixedUI')) return false;
     $('main').data('fixedUI', true);
@@ -134,8 +137,6 @@
     
     // USERS tab
     if ($('#table-users') && $('#table-users').length) {
-      // fix cursor for usernames
-      $('#table-users p.bold').css('cursor', 'pointer');
       // scroll to top button
       $('body > div > main').prepend('<span class="arrowtop" onclick="LIT.scrollTop();" style="background-color:#000;font-size:2.5rem;cursor:pointer;position:fixed;right:1px;bottom:5rem;z-index:999999">🔺</span>');
     }
