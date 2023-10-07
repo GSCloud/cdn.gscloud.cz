@@ -115,6 +115,7 @@
       LIT.passwordTime = null;
 
       $('input[type=text]').click(function() {
+        console.log('click!');
         $('input[type=text]').change(function() {
           LIT.usernameTime = Date.now();
         });
@@ -205,10 +206,6 @@
       $('body').removeClass('dark');
     } else {
       $('body').addClass('dark');
-    }
-
-    if ($('input[type=text]').length && $('input[type=password]').length) {
-      $('input').attr('autocomplete', 'off');
     }
 
     // sortable CSS
