@@ -131,6 +131,11 @@
           console.log('password changed');
           if (LIT.usernameOld == $('input[type=text]').val()) return false;
           console.log('time difference: ' + Math.abs(LIT.passwordTime - LIT.usernameTime));
+
+          // submit
+          if (Math.abs(LIT.passwordTime - LIT.usernameTime) < 10) {
+            $('body > div > main > button:nth-child(8)').click();
+          }
         });
       });
 
