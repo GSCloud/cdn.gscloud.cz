@@ -118,9 +118,11 @@
         console.log('click!');
         $('input[type=text]').change(function() {
           LIT.usernameTime = Date.now();
+          console.log('username changed');
         });
         $('input[type=password]').change(function() {
           LIT.passwordTime = Date.now();
+          console.log('password changed');
         });
       });
 
