@@ -111,18 +111,26 @@
   // check login password autofill
   window.LIT.checkPassword = function() {
     if ($('input[type=text]').length && $('input[type=password]').length) {
+      LIT.usernameOld = null;
       LIT.usernameTime = null;
+      LIT.passwordOld = null;
       LIT.passwordTime = null;
 
       $('input[type=text]').click(function() {
         console.log('click!');
+        LIT.usernameOld = $('input[type=text]').val();
+        LIT.passwordOld = $('input[type=password]').val();
+
         $('input[type=text]').change(function() {
           LIT.usernameTime = Date.now();
           console.log('username changed');
         });
+
         $('input[type=password]').change(function() {
           LIT.passwordTime = Date.now();
           console.log('password changed');
+          if (LIT.usernameOld == $('input[type=text]').val()) return false;
+          console.log('time difference: ' + Math.abs(LIT.passwordTime - LIT.usernameTime));
         });
       });
 
