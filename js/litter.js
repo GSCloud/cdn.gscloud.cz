@@ -114,7 +114,13 @@
       $('input[type=text]').blur(function() {
         LIT.usernameTime = Date.now();
       });
+      $('input[type=text]').change(function() {
+        LIT.usernameTime = Date.now();
+      });
       $('input[type=password]').blur(function() {
+        LIT.passwordTime = Date.now();
+      });
+      $('input[type=password]').change(function() {
         LIT.passwordTime = Date.now();
       });
     }
@@ -139,7 +145,10 @@
       return false;
     }
     $('main').data('fixedUI', true);
+
+    // offline button
     $('body > div > main').prepend('<span class="offline" style="visibility:hidden;background-color:#000;font-size:2.5rem;position:fixed;left:1px;bottom:5rem;z-index:999999">📵</span>').css('[offline="true"] #offline-message{visibility:visible}');
+    LIT.checkPassword();
 
     // fix tables bottom padding
     $('table').css('padding-bottom', '2rem');
