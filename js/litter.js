@@ -111,18 +111,18 @@
   // check login password autofill
   window.LIT.checkPassword = function() {
     if ($('input[type=text]').length && $('input[type=password]').length) {
-      $('input[type=text]').blur(function() {
-        LIT.usernameTime = Date.now();
+      LIT.usernameTime = null;
+      LIT.passwordTime = null;
+
+      $('input[type=text]').focus(function() {
+        $('input[type=text]').change(function() {
+          LIT.usernameTime = Date.now();
+        });
+        $('input[type=password]').change(function() {
+          LIT.passwordTime = Date.now();
+        });
       });
-      $('input[type=text]').change(function() {
-        LIT.usernameTime = Date.now();
-      });
-      $('input[type=password]').blur(function() {
-        LIT.passwordTime = Date.now();
-      });
-      $('input[type=password]').change(function() {
-        LIT.passwordTime = Date.now();
-      });
+
     }
   }
 
