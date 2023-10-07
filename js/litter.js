@@ -207,6 +207,10 @@
       $('body').addClass('dark');
     }
 
+    if ($('input[type=text]').length && $('input[type=password]').length) {
+      $('input').attr('autocomplete', 'off');
+    }
+
     // sortable CSS
     //$('head').append('<link rel="stylesheet" href="https://cdn.gscloud.cz/css/sortable.min.css" type="text/css"/>');
 
