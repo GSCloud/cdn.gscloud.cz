@@ -8,7 +8,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.2.9 ❤️';
+  window.LIT.version = 'LitterJS v0.3.0 ❤️';
 
   // scroll event listener
   function onscroll() {
