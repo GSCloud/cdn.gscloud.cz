@@ -8,7 +8,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.3.2 ❤️';
+  window.LIT.version = 'LitterJS v0.3.3 ❤️';
 
   // scroll event listener
   function onscroll() {
@@ -148,22 +148,20 @@
 
   // fix UI
   window.LIT.fixUI = function() {
-    // image zoom
+    // set image zoom
     LIT.imageZoom();
 
     // fix colors
     LIT.fixColors();
 
-    // fix cursor for usernames
+    // fix cursor pointer
     $('#table-users p.bold').css('cursor', 'pointer');
 
-    // make tables sortable
-    $('#table-stats-flow,#table-users').addClass('sortable');
+    // set some tables sortable
+    $('#table-stats-flow,#table-users,#table-poll').addClass('sortable');
 
-    // test UI render 4 refresh
-    if ($('main').data('fixedUI')) {
-      return false;
-    }
+    // !!! test 4 UI fix already done !!!
+    if ($('main').data('fixedUI')) return false;
     $('main').data('fixedUI', true);
 
     // offline button
@@ -181,7 +179,6 @@
     
     // STATS tab
     if ($('#table-stats-flow') && $('#table-stats-flow').length) {
-      // bottom button click event = scroll to top
       $('#nav-bottom > a:nth-child(1)').click(function() {
         LIT.scrollTop();
       });
@@ -190,7 +187,6 @@
     
     // USERS tab
     if ($('#table-users') && $('#table-users').length) {
-      // bottom button click event = scroll to top
       $('#nav-bottom > a:nth-child(2)').click(function() {
         LIT.scrollTop();
       });
@@ -198,7 +194,6 @@
     
     // POLLS tab
     if ($('#table-poll') && $('#table-poll').length) {
-      // bottom button click event = scroll to top
       $('#nav-bottom > a:nth-child(4)').click(function() {
         LIT.scrollTop();
       });
@@ -206,7 +201,6 @@
     
     // FLOW tab
     if ($('#table-flow') && $('#table-flow').length) {
-      // bottom button click event = page reload
       $('#nav-bottom > a:nth-child(5)').click(function() {
         location.reload();
       });
@@ -230,13 +224,13 @@
     // Sortable tables - https://www.cssscript.com/fast-html-table-sorting/
     $('head').append('<link rel="stylesheet" type="text/css" href="https://cdn.gscloud.cz/css/sortable.min.css">');
 
-    // fix UI repeatedly
+    // set fix UI action interval
     setInterval(LIT.fixUI, 250);
   });
 
 })();
 
-// Umami analytics - https://umami.is
+// add Umami analytics - https://umami.is
 (function() {
   var el = document.createElement('script');
   el.setAttribute('src', 'https://umami.gscloud.cz/script.js');
@@ -244,7 +238,7 @@
   document.body.appendChild(el);
 })();
 
-// Sortable tables - https://www.cssscript.com/fast-html-table-sorting/
+// add Sortable tables - https://www.cssscript.com/fast-html-table-sorting/
 (function() {
   var el = document.createElement('script');
   el.setAttribute('src', 'https://cdn.gscloud.cz/js/sortable.min.js');
