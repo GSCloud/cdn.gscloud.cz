@@ -232,15 +232,15 @@
 
 // add Umami analytics - https://umami.is
 (function() {
-  var el = document.createElement('script');
-  el.setAttribute('src', 'https://umami.gscloud.cz/script.js');
-  el.setAttribute('data-website-id', '9c3bf149-ca5c-4e90-af79-1e228ec4cf4b');
-  document.body.appendChild(el);
+  var x = document.createElement('script');
+  x.setAttribute('src', 'https://umami.gscloud.cz/script.js');
+  x.setAttribute('data-website-id', '9c3bf149-ca5c-4e90-af79-1e228ec4cf4b');
+  document.body.appendChild(x);
 })();
 
 // add Sortable tables - https://www.cssscript.com/fast-html-table-sorting/
 (function() {
-  var el = document.createElement('script');
-  el.setAttribute('src', 'https://cdn.gscloud.cz/js/sortable.min.js');
-  document.body.appendChild(el);
+  var x = document.createElement('script');
+  x.setAttribute('src', 'https://cdn.gscloud.cz/js/sortable.min.js');
+  document.body.appendChild(x);
 })();
