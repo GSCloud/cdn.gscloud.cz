@@ -114,7 +114,7 @@
       LIT.usernameTime = null;
       LIT.passwordTime = null;
 
-      $('input[type=text]').focus(function() {
+      $('input[type=text]').click(function() {
         $('input[type=text]').change(function() {
           LIT.usernameTime = Date.now();
         });
