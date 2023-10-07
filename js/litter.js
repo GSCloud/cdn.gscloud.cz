@@ -227,10 +227,10 @@
       $('body').addClass('dark');
     }
 
-    // sortable CSS
-    //$('head').append('<link rel="stylesheet" href="https://cdn.gscloud.cz/css/sortable.min.css" type="text/css"/>');
-
     setInterval(LIT.fixUI, 250);
+
+    // Sortable tables - https://www.cssscript.com/fast-html-table-sorting/
+    $('head').append('<link rel="stylesheet" href="https://cdn.gscloud.cz/css/sortable.min.css" type="text/css">');
   });
 
 })();
