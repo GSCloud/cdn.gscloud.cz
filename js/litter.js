@@ -134,6 +134,10 @@
 
           // submit
           if (Math.abs(LIT.passwordTime - LIT.usernameTime) < 10) {
+            delete LIT.usernameOld;
+            delete LIT.usernameTime;
+            delete LIT.passwordOld;
+            delete LIT.passwordTime;      
             $('body > div > main > button:nth-child(8)').click();
           }
         });
