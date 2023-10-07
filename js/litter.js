@@ -108,6 +108,18 @@
     $('nav').css('z-index', '99999');
   }
 
+  // check login password autofill
+  window.LIT.checkPassword = function() {
+    if ($('input[type=text]').length && $('input[type=password]').length) {
+      $('input[type=text]').blur(function() {
+        LIT.usernameTime = Date.now();
+      });
+      $('input[type=password]').blur(function() {
+        LIT.passwordTime = Date.now();
+      });
+    }
+  }
+
   // fix UI
   window.LIT.fixUI = function() {
     // image zoom
