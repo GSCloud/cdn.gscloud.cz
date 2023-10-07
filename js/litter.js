@@ -8,7 +8,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.3.1 ❤️';
+  window.LIT.version = 'LitterJS v0.3.2 ❤️';
 
   // scroll event listener
   function onscroll() {
@@ -117,20 +117,20 @@
       LIT.passwordTime = null;
 
       $('input[type=text]').click(function() {
-        console.log('click!');
+        //console.log('click!');
         LIT.usernameOld = $('input[type=text]').val();
         LIT.passwordOld = $('input[type=password]').val();
 
         $('input[type=text]').change(function() {
           LIT.usernameTime = Date.now();
-          console.log('username changed');
+          //console.log('username changed');
         });
 
         $('input[type=password]').change(function() {
           LIT.passwordTime = Date.now();
-          console.log('password changed');
+          //console.log('password changed');
           if (LIT.usernameOld == $('input[type=text]').val()) return false;
-          console.log('time difference: ' + Math.abs(LIT.passwordTime - LIT.usernameTime));
+          //console.log('time difference: ' + Math.abs(LIT.passwordTime - LIT.usernameTime));
 
           // submit
           if (Math.abs(LIT.passwordTime - LIT.usernameTime) < 10) {
@@ -220,17 +220,18 @@
   addEventListener('load', (event) => {
     console.log(LIT.version);
 
-    // set UI mode by localStorage
+    // set UI mode defined by localStorage
     if (localStorage && localStorage['lightmode']) {
       $('body').removeClass('dark');
     } else {
       $('body').addClass('dark');
     }
 
-    setInterval(LIT.fixUI, 250);
-
     // Sortable tables - https://www.cssscript.com/fast-html-table-sorting/
-    $('head').append('<link rel="stylesheet" href="https://cdn.gscloud.cz/css/sortable.min.css" type="text/css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="https://cdn.gscloud.cz/css/sortable.min.css">');
+
+    // fix UI repeatedly
+    setInterval(LIT.fixUI, 250);
   });
 
 })();
