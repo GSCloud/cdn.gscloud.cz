@@ -176,7 +176,7 @@
         $('input[type=password]').change(function() {
           LIT.passwordTime = Date.now();
           if (LIT.usernameOld == $('input[type=text]').val()) return false;
-          //console.log('time difference: ' + Math.abs(LIT.passwordTime - LIT.usernameTime));
+          console.log('time difference: ' + Math.abs(LIT.passwordTime - LIT.usernameTime));
 
           // submit login form
           if (Math.abs(LIT.passwordTime - LIT.usernameTime) < 10) {
