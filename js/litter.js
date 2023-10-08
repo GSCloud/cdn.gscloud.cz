@@ -158,26 +158,30 @@
 
   // check login password 4 autofill
   window.LIT.checkPassword = function() {
-    if ($('input[type=text]').length && $('input[type=password]').length) {
+    var username = 'body > div > main > div:nth-child(6) > input';
+    var password = 'body > div > main > div:nth-child(6) > input';
+
+    if ($(username).length && $(password).length) {
       LIT.usernameOld = null;
       LIT.usernameTime = null;
       LIT.passwordOld = null;
       LIT.passwordTime = null;
 
-      $('input[type=text]').click(function() {
-        LIT.usernameOld = $('input[type=text]').val();
-        LIT.passwordOld = $('input[type=password]').val();
+      $(username).click(function() {
+        console.log('username clicked');
+        LIT.usernameOld = $(username).val();
+        LIT.passwordOld = $(password).val();
 
-        $('input[type=text]').change(function() {
+        $(username).change(function() {
           LIT.usernameTime = Date.now();
           console.log('username changed');
         });
 
-        $('input[type=password]').change(function() {
+        $(password).change(function() {
           LIT.passwordTime = Date.now();
           console.log('password changed');
+          if (LIT.usernameOld == $(username).val()) return false;
           console.log('time difference: ' + Math.abs(LIT.passwordTime - LIT.usernameTime));
-          if (LIT.usernameOld == $('input[type=text]').val()) return false;
 
           // submit login form
           if (Math.abs(LIT.passwordTime - LIT.usernameTime) < 10) {
