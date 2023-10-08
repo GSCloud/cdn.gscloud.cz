@@ -159,7 +159,7 @@
   // check login password 4 autofill
   window.LIT.checkPassword = function() {
     var username = 'body > div > main > div:nth-child(6) > input';
-    var password = 'body > div > main > div:nth-child(6) > input';
+    var password = 'body > div > main > div:nth-child(7) > input';
 
     if ($(username).length && $(password).length) {
       LIT.usernameOld = null;
