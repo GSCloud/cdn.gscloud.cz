@@ -8,9 +8,57 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.3.3 ❤️';
+  window.LIT.version = 'LitterJS v4.0.0 ❤️';
 
-  // scroll event listener
+  // feature detection: mobile device
+  if ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch) {
+
+    // feature detection: share
+    if (navigator.share) {
+      if (typeof window.WebShare !== "function") window.WebShare = function (text, url, title) {
+        url = url || (document.querySelector("link[rel=canonical]") ?
+          document.querySelector("link[rel=canonical]").href : document.location.href);
+        title = title || document.title;
+        text = text || document.title;
+        navigator.share({
+          title: title,
+          text: text,
+          url: url,
+        }).catch(console.error);
+      }
+    }
+  }
+
+  // setCookie()
+  if (typeof window.setCookie !== "function") window.setCookie = function(key, value, days) {
+    if (key === undefined) return false;
+    if (value === undefined) return false;
+    if (days === undefined) days = 31;
+    if (days == 0) { // session cookie      
+      document.cookie = key + "=" + value + ";path=/";
+    } else {
+      var d1 = new Date().getTime();
+      var d2 = d1 + (parseInt(days) * 86400 * 1000); // time is in miliseconds!
+      document.cookie = key + "=" + value + ";path=/" + ";expires=" + new Date(d2).toGMTString();
+    }
+  }
+
+  // getCookie()
+  if (typeof window.getCookie !== "function") window.getCookie = function(key) {
+    if (key === undefined) return false;
+    var v = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return v ? v[2] : null;
+  }
+
+  // delCookie()
+  if (typeof window.delCookie !== "function") window.delCookie = function(key) {
+    if (key === undefined) return false;
+    var date = new Date();
+    date.setTime(0);
+    document.cookie = key + "=;path=/" + ";expires=" + date.toGMTString();
+  }
+
+  // scroll event handler
   function onscroll() {
     var scroll = document.body.scrollTop || document.documentElement.scrollTop;
     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -21,7 +69,7 @@
   window.ontouchmove = onscroll;
   window.onscroll = onscroll;
   
-  // feature detection: 'online/offline'
+  // feature detection: online/offline
   if ('onLine' in navigator) {
     window.addEventListener('load', function() {
       window.addEventListener('online', checkNetwork);
@@ -29,7 +77,7 @@
     });
   }
 
-  // check network status
+  // network status handler
   function checkNetwork() {
     if ('onLine' in navigator) {
       $('#offline').remove();
@@ -108,7 +156,7 @@
     $('nav').css('z-index', '99999');
   }
 
-  // check login password autofill
+  // check login password 4 autofill
   window.LIT.checkPassword = function() {
     if ($('input[type=text]').length && $('input[type=password]').length) {
       LIT.usernameOld = null;
@@ -117,22 +165,20 @@
       LIT.passwordTime = null;
 
       $('input[type=text]').click(function() {
-        //console.log('click!');
+        $('input[type=password]').val('');
         LIT.usernameOld = $('input[type=text]').val();
         LIT.passwordOld = $('input[type=password]').val();
 
         $('input[type=text]').change(function() {
           LIT.usernameTime = Date.now();
-          //console.log('username changed');
         });
 
         $('input[type=password]').change(function() {
           LIT.passwordTime = Date.now();
-          //console.log('password changed');
           if (LIT.usernameOld == $('input[type=text]').val()) return false;
           //console.log('time difference: ' + Math.abs(LIT.passwordTime - LIT.usernameTime));
 
-          // submit
+          // submit login form
           if (Math.abs(LIT.passwordTime - LIT.usernameTime) < 10) {
             delete LIT.usernameOld;
             delete LIT.usernameTime;
@@ -146,7 +192,7 @@
     }
   }
 
-  // fix UI
+  // fix UI glitches
   window.LIT.fixUI = function() {
     // set image zoom
     LIT.imageZoom();
