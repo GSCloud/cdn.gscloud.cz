@@ -27,6 +27,7 @@
         }).catch(console.error);
       }
     }
+
   }
 
   // setCookie()
