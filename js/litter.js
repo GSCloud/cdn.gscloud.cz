@@ -166,9 +166,14 @@
       LIT.usernameTime = null;
       LIT.passwordOld = null;
       LIT.passwordTime = null;
+      LIT.autofill = false;
 
       $(username).click(function() {
         console.log('username clicked');
+
+        if (LIT.autofill) return;
+        LIT.autofill = true;
+
         LIT.usernameOld = $(username).val();
         LIT.passwordOld = $(password).val();
 
