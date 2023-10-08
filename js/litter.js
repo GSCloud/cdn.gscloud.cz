@@ -165,7 +165,7 @@
       LIT.passwordTime = null;
 
       $('input[type=text]').click(function() {
-        $('input[type=password]').val('');
+        //$('input[type=password]').val('');
         LIT.usernameOld = $('input[type=text]').val();
         LIT.passwordOld = $('input[type=password]').val();
 
