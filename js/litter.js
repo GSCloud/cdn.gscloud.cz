@@ -165,18 +165,19 @@
       LIT.passwordTime = null;
 
       $('input[type=text]').click(function() {
-        //$('input[type=password]').val('');
         LIT.usernameOld = $('input[type=text]').val();
         LIT.passwordOld = $('input[type=password]').val();
 
         $('input[type=text]').change(function() {
           LIT.usernameTime = Date.now();
+          console.log('username changed');
         });
 
         $('input[type=password]').change(function() {
           LIT.passwordTime = Date.now();
-          if (LIT.usernameOld == $('input[type=text]').val()) return false;
+          console.log('password changed');
           console.log('time difference: ' + Math.abs(LIT.passwordTime - LIT.usernameTime));
+          if (LIT.usernameOld == $('input[type=text]').val()) return false;
 
           // submit login form
           if (Math.abs(LIT.passwordTime - LIT.usernameTime) < 10) {
