@@ -8,7 +8,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v4.0.1 ❤️';
+  window.LIT.version = 'LitterJS v0.4.1 ❤️';
 
   // feature detection: mobile device
   if ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch) {
