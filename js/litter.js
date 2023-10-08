@@ -273,6 +273,13 @@
 
     // fix colors again
     LIT.fixColors();
+
+    // WebShare click event
+    if (typeof window.WebShare === "function") {
+      $('#nav-top > dialog > img').click(function() {
+        window.WebShare();
+      });
+    }
   }
 
   // onload event listener
