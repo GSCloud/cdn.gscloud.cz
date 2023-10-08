@@ -143,7 +143,7 @@
     $('html,body').animate({scrollTop: 0}, 'fast');
   }
 
-  // dynamic image zoom
+  // fix image zoom
   window.LIT.imageZoom = function() {
     $('#table-flow img:not(.ff)').on('click', function() {
       if ($(this).css('max-height') !== '100%') {
@@ -192,13 +192,26 @@
     }
   }
 
+  // fix anchors
+  window.LIT.fixLinks = function() {
+    if ($('#table-flow article span:not(.ff)').length) {
+      $('#table-flow article span').each(function() {
+        $(this).html($(this).html().replace(/((http|https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g,
+          '<a class="bold red-text" target=_blank href="$1">$1</a> ')).addClass("ff");
+      });
+    }
+  }
+
   // fix UI glitches
   window.LIT.fixUI = function() {
-    // set image zoom
+    // fix image zoom
     LIT.imageZoom();
 
     // fix colors
     LIT.fixColors();
+    
+    // fix links
+    LIT.fixLinks();
 
     // fix cursor pointer
     $('#table-users p.bold').css('cursor', 'pointer');
