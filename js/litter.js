@@ -8,7 +8,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v4.0.0 ❤️';
+  window.LIT.version = 'LitterJS v4.0.1 ❤️';
 
   // feature detection: mobile device
   if ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch) {
@@ -157,7 +157,7 @@
     $('nav').css('z-index', '99999');
   }
 
-  // check login password 4 autofill
+  // login autosubmit
   window.LIT.checkPassword = function() {
     var username = 'body > div > main > div:nth-child(6) > input';
     var password = 'body > div > main > div:nth-child(7) > input';
@@ -217,30 +217,28 @@
   window.LIT.fixUI = function() {
     // fix image zoom
     LIT.imageZoom();
-
     // fix colors
     LIT.fixColors();
-    
     // fix links
     LIT.fixLinks();
 
-    // fix cursor pointer
+    // fix cursors
     $('#table-users p.bold').css('cursor', 'pointer');
-
     // set some tables sortable
     $('#table-stats-flow,#table-users,#table-poll').addClass('sortable');
 
-    // !!! test 4 UI fix already done !!!
+    // test 4 UI fix done
     if ($('main').data('fixedUI')) return false;
     $('main').data('fixedUI', true);
 
     // offline button
     $('body > div > main').prepend('<span class="offline" style="visibility:hidden;background-color:#000;font-size:2.5rem;position:fixed;left:1px;bottom:5rem;z-index:999999">📵</span>').css('[offline="true"] #offline-message{visibility:visible}');
-    LIT.checkPassword();
-
     // fix tables bottom padding
     $('table').css('padding-bottom', '2rem');
-    
+
+    // check login password 4 autofill
+    LIT.checkPassword();
+
     // toggle dark/light UI mode button
     if ($('main h5').html() === 'littr settings') {
       $('body > div > main').prepend('<span class="sun" onclick="LIT.toggleMode();" style="background-color:#000;font-size:1.5rem;cursor:pointer;position:fixed;right:1px;z-index:999999;padding:0.5rem">🌞</span>');
@@ -254,21 +252,18 @@
       });
       
     }
-    
     // USERS tab
     if ($('#table-users') && $('#table-users').length) {
       $('#nav-bottom > a:nth-child(2)').click(function() {
         LIT.scrollTop();
       });
     }
-    
     // POLLS tab
     if ($('#table-poll') && $('#table-poll').length) {
       $('#nav-bottom > a:nth-child(4)').click(function() {
         LIT.scrollTop();
       });
     }
-    
     // FLOW tab
     if ($('#table-flow') && $('#table-flow').length) {
       $('#nav-bottom > a:nth-child(5)').click(function() {
@@ -276,7 +271,7 @@
       });
     }
 
-    // fix colors
+    // fix colors again
     LIT.fixColors();
   }
 
