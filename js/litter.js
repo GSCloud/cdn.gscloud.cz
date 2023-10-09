@@ -208,7 +208,7 @@
     if ($('#table-flow article span:not(.ff)').length) {
       $('#table-flow article span').each(function() {
         $(this).html($(this).html().replace(/((https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g,
-          '<a class="bold red-text" target=_blank href="$1">$1</a>')).addClass("ff");
+          '<a class="bold red-text" target=_blank href="$1">$1</a>   ')).addClass("ff");
       });
     }
   }
