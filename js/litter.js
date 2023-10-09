@@ -8,7 +8,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.4.2 ❤️';
+  window.LIT.version = 'LitterJS v0.4.3 ❤️';
 
   // feature detection: mobile device
   if ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch) {
@@ -208,7 +208,7 @@
     if ($('#table-flow article span:not(.ff)').length) {
       $('#table-flow article span').each(function() {
         $(this).html($(this).html().replace(/((https|ftp):\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g,
-          '<a class="bold red-text" target=_blank href="$1">$1</a>   ')).addClass("ff");
+          '<a class="bold red-text" target=_blank href="$1">$1</a> ')).addClass("ff");
       });
     }
   }
