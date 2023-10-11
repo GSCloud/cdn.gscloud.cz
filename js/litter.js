@@ -214,7 +214,7 @@
           '<a class="red-text" target=_blank href="$1">$1</a> ')).addClass("ff");
       });
     }
-    $('#table-flow a.ff').each(function() {
+    $('#table-flow a').each(function() {
       let x = $(this).html();
       if (x.endsWith('.webp') || x.endsWith('.jpg') || x.endsWith('.jpeg') || x.endsWith('.png')) {
         let u = $(this).attr('href');
