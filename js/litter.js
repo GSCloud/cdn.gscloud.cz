@@ -8,7 +8,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LitterJS v0.5.0 ❤️';
+  window.LIT.version = 'LittrJS v0.5.1 ❤️';
 
   // feature detection: mobile device
   if ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch) {
@@ -159,6 +159,7 @@
 
   // login autosubmit
   window.LIT.checkPassword = function() {
+    // hacky way
     var username = 'body > div > main > div:nth-child(6) > input';
     var password = 'body > div > main > div:nth-child(7) > input';
 
@@ -189,12 +190,14 @@
           if (LIT.usernameOld == $(username).val()) return false;
           console.log('time difference: ' + Math.abs(LIT.passwordTime - LIT.usernameTime));
 
-          // submit login form
-          if (Math.abs(LIT.passwordTime - LIT.usernameTime) < 10) {
+          // delete vars and submit login form if filled within 50 msec
+          if (Math.abs(LIT.passwordTime - LIT.usernameTime) < 50) {
+            delete LIT.autofill;
+            delete LIT.passwordOld;
+            delete LIT.passwordTime;
             delete LIT.usernameOld;
             delete LIT.usernameTime;
-            delete LIT.passwordOld;
-            delete LIT.passwordTime;      
+            // hacky way
             $('body > div > main > button:nth-child(8)').click();
           }
         });
