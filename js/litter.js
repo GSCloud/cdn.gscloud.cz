@@ -203,7 +203,7 @@
     }
   }
 
-  // fix anchors
+  // fix links and images
   window.LIT.fixLinks = function() {
     if ($('#table-flow article span:not(.ff)').length) {
       $('#table-flow article span').each(function() {
@@ -226,7 +226,7 @@
     LIT.imageZoom();
     // fix colors
     LIT.fixColors();
-    // fix links
+    // fix links and images
     LIT.fixLinks();
 
     // fix cursors
