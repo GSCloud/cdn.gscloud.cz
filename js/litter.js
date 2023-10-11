@@ -8,7 +8,7 @@
   window.LIT.online = null;
   window.LIT.scrolled = 0;
   window.LIT.scrollpx = 0;
-  window.LIT.version = 'LittrJS v0.5.2 ❤️';
+  window.LIT.version = 'LittrJS v0.5.3 ❤️';
 
   // feature detection: mobile device
   if ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch) {
@@ -209,16 +209,16 @@
   // fix links and images
   window.LIT.fixLinks = function() {
     if ($('#table-flow article span:not(.ff)').length) {
-      $('#table-flow article span').each(function() {
+      $('#table-flow article span:not(.ff)').each(function() {
         $(this).html($(this).html().replace(/(https:\/\/[\w?=&.\/-;#~%-]+(?![\w\s?&.\/;#~%"=-]*>))/g,
-          '<a class="red-text" target=_blank href="$1">$1</a> ')).addClass("ff");
+          '<a class="red-text" target=_blank href="$1">$1</a> ')).addClass('ff');
       });
     }
     $('#table-flow a').each(function() {
       let x = $(this).html();
       if (x.endsWith('.webp') || x.endsWith('.jpg') || x.endsWith('.jpeg') || x.endsWith('.png')) {
         let u = $(this).attr('href');
-        $(this).html('<img width=25% src="' + u + '">');
+        $(this).html('<img class="ff" width=25% src="' + u + '">').addClass('ff');
       }
     });
     $('a>img').parent().attr('href', '');
