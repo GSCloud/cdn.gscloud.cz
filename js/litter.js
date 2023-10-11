@@ -213,19 +213,7 @@
     }
     $('#table-flow a').each(function() {
       let x = $(this).text();
-      if (x.endsWith('.webp')) {
-        let u = $(this).attr('href');
-        $(this).html('<img width=25% src="' + u + '">');
-      }
-      if (x.endsWith('.jpg')) {
-        let u = $(this).attr('href');
-        $(this).html('<img width=25% src="' + u + '">');
-      }
-      if (x.endsWith('.jpeg')) {
-        let u = $(this).attr('href');
-        $(this).html('<img width=25% src="' + u + '">');
-      }
-      if (x.endsWith('.png')) {
+      if ( x.endsWith('.webp') || x.endsWith('.jpg') || x.endsWith('.jpeg') || x.endsWith('.png')) {
         let u = $(this).attr('href');
         $(this).html('<img width=25% src="' + u + '">');
       }
