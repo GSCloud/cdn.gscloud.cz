@@ -211,6 +211,25 @@
           '<a class="red-text" target=_blank href="$1">$1</a> ')).addClass("ff");
       });
     }
+    $('#table-flow a').each(function() {
+      let x = $(this).text();
+      if (x.endsWith('.webp')) {
+        let u = $(this).attr('href');
+        $(this).html('<img width=25% src="' + u + '">');
+      }
+      if (x.endsWith('.jpg')) {
+        let u = $(this).attr('href');
+        $(this).html('<img width=25% src="' + u + '">');
+      }
+      if (x.endsWith('.jpeg')) {
+        let u = $(this).attr('href');
+        $(this).html('<img width=25% src="' + u + '">');
+      }
+      if (x.endsWith('.png')) {
+        let u = $(this).attr('href');
+        $(this).html('<img width=25% src="' + u + '">');
+      }
+    });
   }
 
   // fix UI glitches
