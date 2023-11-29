@@ -1,12 +1,7 @@
-/* PHP LOGO */
-.php1{position:relative;left:+0.1em;text-transform:lowercase!important}
-.php2{position:relative;left:+0.0em;text-transform:lowercase!important}
-.php3{position:relative;left:-0.1em;text-transform:lowercase!important}
-
 /* EMOJIS */
 .bigemoji{font-size:5em}
-.emoji-list i {font-style: normal!important}
 .emoji-list {min-width: 400px;padding:5px;overflow:scroll;display:inline-block;cursor:pointer;margin:1px}
+.emoji-list i {font-style: normal!important}
 
 @media (max-width:599px) { /* smaller mobile box */
   .emoji-list * {margin: 5px}
@@ -42,10 +37,6 @@ label{color:#000;font-weight:bold}
 .nowrap{white-space:nowrap!important}
 .protect{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:inline-block;width:10em;line-height:12px}
 .mobilebutt{font-size:1.5rem}
-
-/* ROTATION & TOUCH */
-#a_rotate_device{display:none}
-[touch="true"] #a_rotate_device{display:block}
 
 /* SUMMERNOTE */
 .summernote{border:2px dashed #ccc;padding:1rem!important}
