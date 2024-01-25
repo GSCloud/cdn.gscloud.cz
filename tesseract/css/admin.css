@@ -34,9 +34,10 @@ label{color:#000;font-weight:bold}
 .dragover{border:4px dashed blue!important}
 .extrapadding{padding:5px;border-radius:5px}
 .hover{cursor:pointer!important}
+.mobilebutt{font-size:1.5rem}
+.noselect{-webkit-user-select:none;-ms-user-select:none;user-select:none}
 .nowrap{white-space:nowrap!important}
 .protect{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:inline-block;width:10em;line-height:12px}
-.mobilebutt{font-size:1.5rem}
 
 /* SUMMERNOTE */
 .summernote{border:2px dashed #ccc;padding:1rem!important}
