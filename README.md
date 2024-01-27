@@ -1,2 +1,1 @@
-# CDN files
-
+# GSCLOUD CDN
