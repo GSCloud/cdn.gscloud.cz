@@ -3,11 +3,11 @@ label {color:#000;font-weight:bold}
 #admin_main {font-family:Arial!important;padding-top:5px;font-size:14px!important}
 #admin_main .row {margin-bottom:5px}
 #admin_main h2,#admin_main h3,#admin_main h4,#admin_main h5,#admin_main h6 {font-family:Arial!important}
-.a_h2 {font-size:2.0em!important;font-weight:700!important}
-.a_h3 {font-size:1.8em!important;font-weight:700!important}
-.a_h4 {font-size:1.6em!important;font-weight:700!important}
-.a_h5 {font-size:1.4em!important;font-weight:700!important;background-color:#444;color:#fff;border-radius:3px}
 .a_reset {font-family:Arial!important;font-size:14px!important}
+.a_h2 {font-size:2.5em!important;font-weight:700!important}
+.a_h3 {font-size:2.1em!important;font-weight:700!important}
+.a_h4 {font-size:1.8em!important;font-weight:700!important}
+.a_h5 {font-size:1.5em!important;font-weight:700!important;background-color:#444;color:#fff;border-radius:3px}
 
 .btnmargin {margin:2px;margin-bottom:5px}
 .dragover {border:4px dashed blue!important}
