@@ -1,0 +1,5 @@
+/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Max-Age: 864000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
