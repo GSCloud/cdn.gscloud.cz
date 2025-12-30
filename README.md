@@ -1,4 +1,4 @@
-# GSCLOUD CDN
+# GS CLOUD Ltd. CDN
 
 ---
 

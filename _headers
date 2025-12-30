@@ -3,3 +3,17 @@
   Access-Control-Max-Age: 864000
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/tesseract/js/jquery.min.js
+  Cache-Control: public, max-age=31536000, immutable
+/tesseract/js/moment-with-locales.min.js
+  Cache-Control: public, max-age=31536000, immutable
+/tesseract/js/moment.min.js
+  Cache-Control: public, max-age=31536000, immutable
+/tesseract/js/zeroupload.min.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/materialize/v1.2.2/js/materialize.min.js
+  Cache-Control: public, max-age=31536000, immutable
